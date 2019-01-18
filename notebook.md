@@ -6,5 +6,5 @@
 # Week 01/14/2019-01/20/2019
 * Read chapters 4-5 and 13 in Cloud Computing book.
 * Software: Installed VirtualBox and created a machine with Ubuntu 18.04.1 LTS.
-* Contributions: Pushed changes to chapters/assignment.md
+* Contributions: Pushed changes to chapters/assignment.md. Wrote hot-cold aisle section in chapters/cloud/datacenter.md.
 * Videos: Watched e516-introduction, e516-definition-cloud, and guestadditionsvbox
