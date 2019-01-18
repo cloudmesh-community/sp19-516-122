@@ -5,3 +5,8 @@ owner:
   hid: sp19-516-122
   community: e516
   semester: sp19
+section:
+  - title: Hot-Cold Isle 
+    keyword: hot-cold isle
+    url: https://github.com/cloudmesh-community/book/blob/master/chapters/cloud/datacenter.md
+    github: https://github.com/cloudmesh-community/book/pull/277
