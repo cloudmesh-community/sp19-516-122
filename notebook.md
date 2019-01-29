@@ -14,4 +14,4 @@
 * Contributions: Touched up the section on hot-cold aisles, fixing an error in the heat transfer calculation.
 
 # Week 01/28/2019-02/03/2019
-
+* Videos: Watched REST.
