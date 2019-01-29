@@ -8,3 +8,10 @@
 * Software: Installed VirtualBox and created a machine with Ubuntu 18.04.1 LTS.
 * Contributions: Pushed changes to chapters/assignment.md. Wrote hot-cold aisle section in chapters/cloud/datacenter.md.
 * Videos: Watched e516-introduction, e516-definition-cloud, and guestadditionsvbox
+
+# Week 01/21/2019-01/27/2019
+* Read chapter 8 in Cloud Computing book.
+* Contributions: Touched up the section on hot-cold aisles, fixing an error in the heat transfer calculation.
+
+# Week 01/28/2019-02/03/2019
+
