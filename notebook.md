@@ -15,3 +15,4 @@
 
 # Week 01/28/2019-02/03/2019
 * Videos: Watched REST.
+* Office Hours: Attended Thursday Office Hours discussing REST.
