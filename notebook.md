@@ -1,6 +1,6 @@
 # Week 01/28/2019-02/03/2019
 
-* Read: chapter 9 in Cloud Computing Book
+* Read: chapters 9 and 10 in Cloud Computing Book
 * Videos: Watched REST.
 * Office Hours: Attended Thursday Office Hours discussing REST.
 
