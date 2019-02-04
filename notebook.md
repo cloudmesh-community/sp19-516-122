@@ -1,7 +1,7 @@
 # Week 02/04/2019-02/11/2019
 
 * Read:
-* Videos:
+* Videos: Watched Introduction to Swagger
 * Office Hours: 
 
 # Week 01/28/2019-02/03/2019
