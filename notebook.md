@@ -1,3 +1,9 @@
+# Week 02/04/2019-02/11/2019
+
+* Read:
+* Videos:
+* Office Hours: 
+
 # Week 01/28/2019-02/03/2019
 
 * Read: chapters 9 and 10 in Cloud Computing Book
