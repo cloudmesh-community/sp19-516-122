@@ -2,6 +2,7 @@
 
 * Read:
 * Videos: Watched Introduction to Swagger
+* Contributions: Began a rewrite/expansion of the NumPy section of chapters/prg/python/numpy/numpy.md.
 * Office Hours: 
 
 # Week 01/28/2019-02/03/2019
