@@ -2,9 +2,8 @@
 
 * Read: chapter 11 (Infrastructure as a Service) in Cloud Computing Book
 * Videos: Watched Introduction to Swagger
-* Contributions: Began a rewrite/expansion of the NumPy section of
-  chapters/prg/python/numpy/numpy.md. Update: Rewrite finished and
-  pull request submitted.
+* Contributions: Rewrote/expanded the NumPy section of chapters/prg/python
+  /numpy/numpy.md. Pull requested has been accepted.
 * Office Hours: 
 
 # Week 01/28/2019-02/03/2019
@@ -21,7 +20,8 @@
 
 # Week 01/14/2019-01/20/2019
 
-* Read: chapters 4 (Class Overview), 5 (Definition of Cloud Computing) and 17 (Python) in Cloud Computing book.
+* Read: chapters 4 (Class Overview), 5 (Definition of Cloud Computing) and 17
+  (Python) in Cloud Computing book.
 * Software: Installed VirtualBox and created a machine with Ubuntu 18.04.1 LTS.
 * Contributions: Pushed changes to chapters/assignment.md. Wrote hot-cold aisle
   section in chapters/cloud/datacenter.md.
