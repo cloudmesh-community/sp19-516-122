@@ -9,19 +9,19 @@
 
 # Week 01/28/2019-02/03/2019
 
-* Read: chapters 9 and 10 in Cloud Computing Book
+* Read: chapters 9 (REST) and 10 (Virtualization) in Cloud Computing Book
 * Videos: Watched REST.
 * Office Hours: Attended Thursday Office Hours discussing REST.
 
 # Week 01/21/2019-01/27/2019
 
-* Read: chapter 8 in Cloud Computing book.
+* Read: chapter 8 (NIST Big Data Reference Architecture) in Cloud Computing book.
 * Contributions: Touched up the section on hot-cold aisles, fixing an error in
   the heat transfer calculation.
 
 # Week 01/14/2019-01/20/2019
 
-* Read: chapters 4, 5 and 13 in Cloud Computing book.
+* Read: chapters 4 (Class Overview), 5 (Definition of Cloud Computing) and 17 (Python) in Cloud Computing book.
 * Software: Installed VirtualBox and created a machine with Ubuntu 18.04.1 LTS.
 * Contributions: Pushed changes to chapters/assignment.md. Wrote hot-cold aisle
   section in chapters/cloud/datacenter.md.
@@ -29,6 +29,6 @@
 
 # Week 01/07/2019-01/13/2019
 
-* Read chapters 1-3 in Cloud Computing book.
+* Read chapters 1 (Introduction), 2 (Tools), and 3 (Python) in Cloud Computing book.
 * Assignment: Published bio on Piazza
 * Office Hours: Attended orientation with Professor von Laszewski
