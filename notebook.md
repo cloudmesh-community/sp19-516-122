@@ -1,6 +1,6 @@
 # Week 02/04/2019-02/11/2019
 
-* Read:
+* Read: chapter 11 (Infrastructure as a Service) in Cloud Computing Book
 * Videos: Watched Introduction to Swagger
 * Contributions: Began a rewrite/expansion of the NumPy section of
   chapters/prg/python/numpy/numpy.md. Update: Rewrite finished and
