@@ -10,7 +10,6 @@ section:
     keyword: numpy
     url: https://github.com/cloudmesh-community/book/blob/master/chapters/prg/python/numpy/numpy.md
     github: https://github.com/cloudmesh-community/book/pull/346
-    issue: 
   - title: Hot-Cold Isle 
     keyword: hot-cold isle
     url: https://github.com/cloudmesh-community/book/blob/master/chapters/cloud/datacenter.md
