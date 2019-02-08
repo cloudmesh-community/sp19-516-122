@@ -4,7 +4,6 @@
 * Videos: Watched Introduction to Swagger
 * Contributions: Rewrote/expanded the NumPy section of chapters/prg/python
   /numpy/numpy.md. Pull request is pending.
-* Office Hours: 
 
 # Week 01/28/2019-02/03/2019
 
