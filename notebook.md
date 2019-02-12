@@ -1,12 +1,10 @@
-# Week 02/12/2019-02/18/2019
-
-
 # Week 02/04/2019-02/11/2019
 
 * Read: chapter 11 (Infrastructure as a Service) in Cloud Computing Book
 * Videos: Watched Introduction to Swagger
 * Contributions: Rewrote/expanded the NumPy section of chapters/prg/python
   /numpy/numpy.md. Pull request is pending.
+* Chapters: began laying out spark.md.
 
 # Week 01/28/2019-02/03/2019
 
