@@ -1,4 +1,8 @@
-# Week 02/04/2019-02/11/2019
+# Week 02/11/2019-02/17/2019
+
+* Videos: Watched CMD5 Command Generation
+
+# Week 02/04/2019-02/10/2019
 
 * Read: chapter 11 (Infrastructure as a Service) in Cloud Computing Book
 * Videos: Watched Introduction to Swagger
