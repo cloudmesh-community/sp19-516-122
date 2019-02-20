@@ -1,4 +1,8 @@
 # Week 02/11/2019-02/17/2019
+* Videos: Containers A and Containers B.
+* Chapters: Working on spark.md. Writing introduction and installation sections.
+
+# Week 02/11/2019-02/17/2019
 
 * Videos: Watched CMD5 Command Generation
 * Chapters: Worked on spark.md.
