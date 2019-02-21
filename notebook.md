@@ -2,6 +2,7 @@
 * Read: chapter 13 (Containers) in Cloud Computing Book
 * Videos: Containers A and Containers B.
 * Chapters: Working on spark.md. Writing introduction and installation sections.
+* Office Hours: attended Wednesday Office Hours discussing projects.
 * Activity: Learned how to spin up/spin down Google VM instances. Worked with
 professor to add new features/explore images.
 
