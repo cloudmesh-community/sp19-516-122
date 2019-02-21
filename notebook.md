@@ -2,7 +2,8 @@
 * Read: chapter 13 (Containers) in Cloud Computing Book
 * Videos: Containers A and Containers B.
 * Chapters: Working on spark.md. Writing introduction and installation sections.
-* Activity: Learned how to spin up/spin down Google VM instances. Working through libcloud to automate.
+* Activity: Learned how to spin up/spin down Google VM instances. Worked with
+professor to add new features/explore images.
 
 # Week 02/11/2019-02/17/2019
 
