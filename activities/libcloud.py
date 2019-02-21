@@ -6,13 +6,12 @@ from libcloud.compute.types import Provider
 from libcloud.compute.providers import get_driver
 
 config = Config("C:\\Users\\aduer\\Desktop\\untitled\\cloudmesh4.yaml")
-print(config['cloudmesh.cluster.gce'])
 
 google = get_driver(Provider.GCE)
-driver = google(config['cloudmesh.cluster.gce.account'],
-                config['cloudmesh.cluster.gce.publickey'],
-                project=config['cloudmesh.cluster.gce.project'],
-                datacenter=config['cloudmesh.cluster.gce.datacenter'])
+driver = google(config['cloudmesh.cloud.gce.credentials.clientid'],
+                config['cloudmesh.cloud.gce.credentials.clientsecret'],
+                config['cloudmesh.cloud.gce.credentials.project'],
+                config['cloudmesh.cloud.gce.credentials.datacenter'])
 
 # Loop through all available images.
 # Images include flavors. For example:
