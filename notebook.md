@@ -1,10 +1,13 @@
-# Week 02/11/2019-02/17/2019
+# Week 02/25/2019-03/03/2019
+
+# Week 02/18/2019-02/24/2019
 * Read: chapter 13 (Containers) in Cloud Computing Book
 * Videos: Containers A and Containers B.
-* Chapters: Working on spark.md. Writing introduction and installation sections.
+* Chapters: Working on spark.md. Wrote introduction section.
 * Office Hours: attended Wednesday Office Hours discussing projects.
 * Activity: Learned how to spin up/spin down Google VM instances. Worked with
-professor to add new features/explore images.
+professor to add new features/explore images. Fixed an error with the MongoDB
+install cloudmesh command on Linux.
 
 # Week 02/11/2019-02/17/2019
 
