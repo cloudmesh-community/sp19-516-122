@@ -4,7 +4,8 @@
 * Read: chapter 13 (Containers) in Cloud Computing Book
 * Videos: Containers A and Containers B.
 * Chapters: Working on spark.md. Wrote introduction section.
-* Office Hours: attended Wednesday Office Hours discussing projects.
+* Office Hours: attended Wednesday Office Hours discussing projects and Thursday
+office hours discussing problems people were having.
 * Activity: Learned how to spin up/spin down Google VM instances. Worked with
 professor to add new features/explore images. Fixed an error with the MongoDB
 install cloudmesh command on Linux.
