@@ -17,7 +17,11 @@ a preliminary listing, these functions will be implemented:
 * list - what clusters are running.
 * start # - start up a cluster with # nodes.
 * stop # - stop a particular cluster.
+* submit - submit a program to the cluster for processing as a Spark job.
+* upload - upload data to an S3 bucket for loading by the cluster.
 
+Depending on availability, the upload function may or may not depend on other
+student's work on an S3 module.
 
 ## Experimentation and Reporting
 
