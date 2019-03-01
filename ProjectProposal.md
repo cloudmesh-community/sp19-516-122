@@ -9,7 +9,15 @@ different servers are utilized.
 ## Cloudmesh Module
 
 The cloudmesh module will be developed first and allow for the user to start,
-stop, and submit jobs to an EMR cluster. 
+stop, and submit jobs to an EMR cluster. The module will include sensible
+defaults in terms of task node setup, datacenter location, etc. and various
+utility functions (what clusters are running, what is their status, etc. As
+a preliminary listing, these functions will be implemented:
+
+* list - what clusters are running.
+* start # - start up a cluster with # nodes.
+* stop # - stop a particular cluster.
+
 
 ## Experimentation and Reporting
 
