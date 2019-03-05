@@ -1,4 +1,8 @@
+# Week 03/04/2019-03/10/2019
+
 # Week 02/25/2019-03/03/2019
+* Read: Scientific Writing EPUB
+* Project: Began working on cloudmesh cmd for AWS Elastic Map Reduce
 
 # Week 02/18/2019-02/24/2019
 * Read: chapter 13 (Containers) in Cloud Computing Book
