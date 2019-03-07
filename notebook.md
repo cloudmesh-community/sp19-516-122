@@ -1,6 +1,7 @@
 # Week 03/04/2019-03/10/2019
 * Project: Worked on cloudmesh cmd. Listing clusters and instances work. Next
-step will be to create, start, and stop clusters.
+step will be to create, start, and stop clusters. Utilizing Config() to read
+YAML file and get EC2 keys. Using PrettyTable to nicely print results of requests.
 
 # Week 02/25/2019-03/03/2019
 * Read: Scientific Writing EPUB
