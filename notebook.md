@@ -1,4 +1,6 @@
 # Week 03/04/2019-03/10/2019
+* Project: Worked on cloudmesh cmd. Listing clusters and instances work. Next
+step will be to create, start, and stop clusters.
 
 # Week 02/25/2019-03/03/2019
 * Read: Scientific Writing EPUB
