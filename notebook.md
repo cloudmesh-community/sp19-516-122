@@ -2,10 +2,12 @@
 * Project: Worked on cloudmesh cmd. Listing clusters and instances work. Next
 step will be to create, start, and stop clusters. Utilizing Config() to read
 YAML file and get EC2 keys. Using PrettyTable to nicely print results of requests.
+* Activity: Read up on docopt and PrettyTable. Utilizing both in project.
 
 # Week 02/25/2019-03/03/2019
 * Read: Scientific Writing EPUB
 * Project: Began working on cloudmesh cmd for AWS Elastic Map Reduce
+* Office Hours: attended Thursday Office Hours discussing projects.
 
 # Week 02/18/2019-02/24/2019
 * Read: chapter 13 (Containers) in Cloud Computing Book
