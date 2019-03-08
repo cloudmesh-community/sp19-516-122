@@ -1,7 +1,8 @@
 # Week 03/04/2019-03/10/2019
-* Project: Worked on cloudmesh cmd. Listing clusters and instances work. Next
-step will be to create, start, and stop clusters. Utilizing Config() to read
-YAML file and get EC2 keys. Using PrettyTable to nicely print results of requests.
+* Project: Worked on cloudmesh cmd. Most of the preliminary work is done.
+Command includes the ability to create, list, describe, and stop Spark
+clusters. Next phase will be to upload data and submit jobs. Using
+PrettyTable to nicely print results of requests.
 * Activity: Read up on docopt and PrettyTable. Utilizing both in project.
 
 # Week 02/25/2019-03/03/2019
