@@ -2,7 +2,7 @@ from __future__ import print_function
 from cloudmesh.shell.command import command
 from cloudmesh.shell.command import PluginCommand
 from cloudmesh.anthony.api.manager import Manager
-from cloudmesh.common.console import  Console
+from cloudmesh.common.console import Console
 from cloudmesh.common.util import path_expand
 from pprint import pprint
 
@@ -10,32 +10,60 @@ import boto3
 from cloudmesh.management.configuration.config import Config
 from prettytable import PrettyTable
 
+
 class EmrCommand(PluginCommand):
     # noinspection PyUnusedLocal
     @command
-    def do_EMR(self, args, arguments):
+    def do_emr(self, args, arguments):
         """
         ::
 
           Usage:
-                EMR list (--clusters | --instances=<ClusterID>)
-                EMR describe --cluster=<ClusterId>
-                EMR start --cluster=<ClusterId>
-                EMR stop --cluster=<ClusterId>
-
+                emr list (--clusters | --instances=CLUSTERID)
+                emr describe --cluster=CLUSTERID
+                emr start --cluster=CLUSTERID
+                emr stop --cluster=CLUSTERID
+                emr upload [--program=PROGRAM | --data=DATA] --s3=BUCKET
 
           This command is used to interface with Amazon Web Service's
           Elastic Map Reduce (EMR) service to run Apache Spark jobs.
           It can start, list, and stop clusters and submit jobs to them.
 
           Arguments:
+            CLUSTERID  The Amazon Cluster ID for the cluster being queried.
+            CLUSTERNAME  The name to be given to a new cluster.
+            PROGRAM  The Python program (*.py) to be uploaded to the cluster via S3 and run.
+            DATA  The Data to be uploaded to the S3 bucket for processing.
+            BUCKET  The S3 bucket ID to store programs or data.
 
+          Description:
+            emr
+              Amazon Web Services's (AWS) Elastic Map Reduce service is managed via
+              the emr command.
 
-          Options:
+              The configuration file is read from ~/.cloudmesh/cloudmesh4.yaml and must contain the
+              following keys with valid values:
+                 cloudmesh.cloud.aws.credentials.EC2_ACCESS_ID
+                 cloudmesh.cloud.aws.credentials.EC2_SECRET_KEY
+
+              Once the Access ID and Secret Key are created, the following commands can be
+              used to interface with EMR.
+
+                emr list (--clusters | --instances=CLUSTERID)
+                  List clusters its ID, name, and status. For instances, lists the ID, Type, Status, and Market.
+                emr describe --cluster=CLUSTERID
+                  Describe a cluster and lists the ID, Name, Status, Region, Type, and Instance Hours.
+                emr start --cluster=CLUSTERNAME
+                  Starts a cluster with a name set to CLUSTERNAME.
+                emr stop --cluster=CLUSTERID
+                  Stops a cluster with the given ID, if it exists.
+                emr upload [--program=PROGRAM | --data=DATA] --s3=BUCKET
+                  Uploads a program or data to an S3 bucket for use by the Spark cluster.
 
         """
         print(arguments)
 
+        #Extract boto3 stuff out into provider class.
         configs = Config()
         client = boto3.client('emr', region_name='us-west-1',
                               aws_access_key_id=configs['cloudmesh.cloud.aws.credentials.EC2_ACCESS_ID'],
@@ -43,7 +71,7 @@ class EmrCommand(PluginCommand):
 
         if arguments['list'] and arguments['--clusters']:
             clusters = client.list_clusters()
-            if len(clusters)==0:
+            if len(clusters) == 0:
                 print("No clusters appear to have been created.")
             else:
                 t = PrettyTable(['ID', 'Name', 'Status'])
@@ -52,7 +80,7 @@ class EmrCommand(PluginCommand):
                 print(t)
         elif arguments['list'] and arguments['--instances'] is not None:
             instances = client.list_instances(ClusterId=arguments['--instances'])
-            if len(instances)==0:
+            if len(instances) == 0:
                 print("No instances appear to have been created.")
             else:
                 t = PrettyTable(['ID', 'Type', 'Status', 'Market'])
@@ -84,7 +112,6 @@ class EmrCommand(PluginCommand):
             client.terminate_job_flows(JobFlowIds=[arguments['--cluster']])
             print("Shutdown request sent. You can check its status via --list.")
         elif arguments['start'] and arguments['--cluster'] is not None:
-
 
             setup = {'MasterInstanceType': 'm1.medium',
                      'SlaveInstanceType': 'm1.medium',
