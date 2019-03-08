@@ -5,6 +5,9 @@ owner:
   hid: sp19-516-122
   community: e516
   semester: sp19
+project:
+  code: https://github.com/cloudmesh-community/sp19-516-122/tree/master/project-code
+  report: 
 section:
   - title: NumPy
     keyword: numpy
