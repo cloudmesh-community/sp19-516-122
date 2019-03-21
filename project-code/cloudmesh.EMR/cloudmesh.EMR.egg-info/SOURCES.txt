@@ -1,0 +1,16 @@
+README.md
+setup.cfg
+setup.py
+cloudmesh/__init__.py
+cloudmesh.anthony.egg-info/PKG-INFO
+cloudmesh.anthony.egg-info/SOURCES.txt
+cloudmesh.anthony.egg-info/dependency_links.txt
+cloudmesh.anthony.egg-info/namespace_packages.txt
+cloudmesh.anthony.egg-info/not-zip-safe
+cloudmesh.anthony.egg-info/requires.txt
+cloudmesh.anthony.egg-info/top_level.txt
+cloudmesh/anthony/__init__.py
+cloudmesh/anthony/api/__init__.py
+cloudmesh/anthony/api/manager.py
+cloudmesh/anthony/command/__init__.py
+cloudmesh/anthony/command/anthony.py
