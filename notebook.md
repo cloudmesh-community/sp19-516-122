@@ -1,5 +1,8 @@
 # Week 03/18/2019-03/24/2019
-* 
+* Project: Rewrote project to split into EMR.py and manager.py with one handling
+interface and the other handling actual program logic.
+* Office Hours: Attended Thursday office hours to discuss error handling and
+project specifics.
 
 # Week 03/11/2019-03/17/2019
 * Down week due to Spring Break
