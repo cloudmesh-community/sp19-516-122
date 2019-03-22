@@ -31,7 +31,6 @@ requiers = """
 psutil
 pygments
 boto3
-prettytable
 """.split("\n")
 
 # dependency_links = ['http://github.com/nicolaiarocci/eve.git@develop']
@@ -43,11 +42,11 @@ with open('README.md') as f:
 
 
 
-NAME = "cloudmesh.EMR"
-DESCRIPTION = "A command called EMR for interacting with AWS Elastic Map Reduce via cloudmesh shell"
+NAME = "cloudmesh.emr"
+DESCRIPTION = "A command called emr and foo for the cloudmesh shell"
 AUTHOR = "Gregor von Laszewski"
 AUTHOR_EMAIL = "laszewski@gmail.com"
-URL = "https://github.com/cloudmesh/cloudmesh.EMR"
+URL = "https://github.com/cloudmesh/cloudmesh.emr"
 
 
 setup(
