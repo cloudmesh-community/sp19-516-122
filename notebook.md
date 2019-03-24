@@ -1,6 +1,7 @@
 # Week 03/18/2019-03/24/2019
 * Project: Rewrote project to split into EMR.py and manager.py with one handling
-interface and the other handling actual program logic.
+interface and the other handling actual program logic. Finished work on spinning
+clusters up/down via the rewrite.
 * Office Hours: Attended Thursday office hours to discuss error handling and
 project specifics.
 
