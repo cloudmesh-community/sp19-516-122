@@ -7,8 +7,11 @@ from cloudmesh.common.Printer import Printer
 
 
 '''
-Todo - upload program to S3. upload data to S3. Copy data from S3 to local. Copy data from local to S3.
-       Run/Submit Jobs.
+Todo
+	Copy things from S3 to local.
+	Copy things from local to S3.
+	Run Steps.
+	List Steps.
 '''
 
 class EmrCommand(PluginCommand):
@@ -22,9 +25,11 @@ class EmrCommand(PluginCommand):
         Usage:
             emr list clusters [--status=STATUS...] [--format=FORMAT]
             emr list instances <CLUSTERID> [--status=STATUS...] [--type=TYPE...] [--format=FORMAT]
+            emr list steps <CLUSTERID> [--state=STATE...] [--format=FORMAT]
             emr describe <CLUSTERID>
             emr stop <CLUSTERID>
             emr start <NAME> [--master=MASTER] [--node=NODE] [--count=COUNT]
+            emr upload <FILE> <BUCKET> <BUCKETNAME>
 
 
         This command is used to interface with Amazon Web Services
@@ -33,6 +38,10 @@ class EmrCommand(PluginCommand):
 
         Arguments:
             CLUSTERID               The AWS Cluster ID.
+            NAME                    The name of the cluster.
+            FILE                    The local file to upload.
+            BUCKET                  The name of the S3 bucket to upload to.
+            BUCKETNAME              The name to save to in the Bucket.
 
         Options:
             --status=STATUS         The status to search for.  [default: all]
@@ -41,6 +50,7 @@ class EmrCommand(PluginCommand):
             --master=MASTER         The type of server to use for the master node. [default: m1.medium]
             --node=NODE             The type of server to use for the worker nodes. [default: m1.medium]
             --count=COUNT           The number of servers to use [default: 3]
+            --state=STATE           The state of the job step to filter for.
 
         Description:
             emr list clusters [--status=STATUS] [--format=FORMAT]
@@ -49,6 +59,9 @@ class EmrCommand(PluginCommand):
             emr list instances [--status=STATUS...] [--format=FORMAT]
                 Lists all instances viewable to the credentials with a given status [default: all}. Valid statuses are:
                 start, provision, boot, run, down. Valid types are: master, core, and task.
+            emr list steps <CLUSTERID [--state=STATE...]
+                Lists all steps being performed by a cluster. Valid states are pending, canceling, running, completed
+                cancelled, failed, and  interrupted
             emr describe <CLUSTERID>
                 Describes a cluster. Lists its status, region, type, etc.
             emr stop <CLUSTERID>
@@ -58,8 +71,8 @@ class EmrCommand(PluginCommand):
                 Spark.
         """
 
-        map_parameters(arguments, 'status', 'format', 'type', 'master', 'node', 'count')
-        #print(arguments)
+        map_parameters(arguments, 'status', 'format', 'type', 'master', 'node', 'count', 'state')
+        print(arguments)
 
         emr = Manager()
 
@@ -87,6 +100,18 @@ class EmrCommand(PluginCommand):
                                         header=["ID", "State", "State Reason", "State Message", "Market",
                                                 "Instance Type"],
                                         output=arguments['format']))
+        elif arguments['list'] and arguments['steps']:
+            steps = emr.list_steps(arguments)
+
+            print(steps)
+            if len(steps) == 0:
+                print("No steps were found.")
+            else:
+                print(Printer.flatwrite(steps,
+                                        sort_keys=["Id"],
+                                        order=["Id", "Name", "Status"],
+                                        header=["ID", "Name", "Status.State"],
+                                        output=arguments['format']))
         elif arguments['describe']:
             cluster = emr.describe_cluster(arguments)
 
@@ -113,6 +138,11 @@ class EmrCommand(PluginCommand):
         elif arguments['start']:
             cluster = emr.start_cluster(arguments)
             print(cluster['name'] + ": " + cluster['cluster'] + " " + cluster["status"])
+        elif arguments['upload']:
+            upload = emr.upload_file(arguments)
+            print("File uploaded to: " + upload['bucket'] + " - " + upload['file'])
+        elif arguments['copy']:
+            return ""
 
         return ""
 

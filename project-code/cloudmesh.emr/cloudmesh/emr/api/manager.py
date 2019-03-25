@@ -9,14 +9,14 @@ class Manager(object):
     def list(self, parameter):
         print("list", parameter)
 
-    def get_client(self):
+    def get_client(self, service='emr'):
         configs = Config()
 
         key_id = configs['cloudmesh.cloud.aws.credentials.EC2_ACCESS_ID']
         access_key = configs['cloudmesh.cloud.aws.credentials.EC2_SECRET_KEY']
         region = configs['cloudmesh.cloud.aws.credentials.region']
 
-        client = boto3.client('emr', region_name=region,
+        client = boto3.client(service, region_name=region,
                               aws_access_key_id=key_id,
                               aws_secret_access_key=access_key)
         return client
@@ -29,7 +29,6 @@ class Manager(object):
                 if option in states:
                     result += [states[option]]
         return result
-
 
     def list_clusters(self, args):
         client = self.get_client()
@@ -58,6 +57,20 @@ class Manager(object):
         results = client.list_instances(ClusterId=args['<CLUSTERID>'], InstanceGroupTypes=instance_types,
                                         InstanceStates=instance_state)
         return results['Instances']
+
+    def list_steps(self, args):
+        client = self.get_client()
+
+        options = args['state']
+        opt_states = {'pending': 'PENDING', 'canceling': 'CANCEL_PENDING', 'running': 'RUNNING',
+                      'completed': 'COMPLETED', 'cancelled': 'CANCELLED', 'failed': 'FAILED',
+                      'interrupted': 'INTERRUPTED'}
+
+        step_state = self.parse_options(options, opt_states)
+
+        results = client.list_steps(ClusterId=args['<CLUSTERID>'], StepStates=step_state)
+
+        return results['Steps']
 
     def describe_cluster(self, args):
         client = self.get_client()
@@ -89,4 +102,21 @@ class Manager(object):
 
         return {"cloud": "aws", "kind": "emr", "cluster": results['JobFlowId'], "name": args['<NAME>'],
                 "status": "Starting"}
+
+    def upload_file(self, args):
+        client = self.get_client(service='s3')
+        client.upload_file(args['<FILE>'], args['<BUCKET>'], args['<BUCKETNAME>'])
+
+        return {"cloud": "aws", "kind": "file", "bucket": args['<BUCKET>'], "file": args['<BUCKETNAME>']}
+
+'''    {
+        'Name': 'setup - copy files',
+        'ActionOnFailure': 'CANCEL_AND_WAIT',
+        'HadoopJarStep': {
+            'Jar': 'command-runner.jar',
+            'Args': ['aws', 's3', 'cp', S3_URI, '/home/hadoop/']
+        }
+    },
+S3_URI = 's3://{bucket}/{key}'.format(bucket=S3_BUCKET, key=S3_KEY)
+'''
 
