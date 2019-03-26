@@ -68,8 +68,10 @@ class Manager(object):
 
         step_state = self.parse_options(options, opt_states)
 
-        results = client.list_steps(ClusterId=args['<CLUSTERID>'], StepStates=step_state)
-
+        if len(step_state) != 0:
+            results = client.list_steps(ClusterId=args['<CLUSTERID>'], StepStates=step_state)
+        else:
+            results = client.list_steps(ClusterId=args['<CLUSTERID>'])
         return results['Steps']
 
     def describe_cluster(self, args):
@@ -109,14 +111,14 @@ class Manager(object):
 
         return {"cloud": "aws", "kind": "file", "bucket": args['<BUCKET>'], "file": args['<BUCKETNAME>']}
 
-'''    {
-        'Name': 'setup - copy files',
-        'ActionOnFailure': 'CANCEL_AND_WAIT',
-        'HadoopJarStep': {
-            'Jar': 'command-runner.jar',
-            'Args': ['aws', 's3', 'cp', S3_URI, '/home/hadoop/']
-        }
-    },
-S3_URI = 's3://{bucket}/{key}'.format(bucket=S3_BUCKET, key=S3_KEY)
-'''
+    def copy_file(self, args):
+        client = self.get_client()
+
+        s3 = 's3://' + args['<BUCKET>'] + '/' + args['<BUCKETNAME>']
+
+        step = {'Name': 'Copy ' + args['<BUCKETNAME>'], 'ActionOnFailure': 'CANCEL_AND_WAIT',
+                'HadoopJarStep': {'Jar': 'command-runner.jar', 'Args': ['aws', 's3', 'cp', s3, '/home/hadoop/']}}
+
+        response = client.add_job_flow_steps(JobFlowId=args['<CLUSTERID>'], Steps=[step])
+        return response
 

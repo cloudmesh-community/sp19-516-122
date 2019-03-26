@@ -8,10 +8,7 @@ from cloudmesh.common.Printer import Printer
 
 '''
 Todo
-	Copy things from S3 to local.
-	Copy things from local to S3.
 	Run Steps.
-	List Steps.
 '''
 
 class EmrCommand(PluginCommand):
@@ -30,6 +27,7 @@ class EmrCommand(PluginCommand):
             emr stop <CLUSTERID>
             emr start <NAME> [--master=MASTER] [--node=NODE] [--count=COUNT]
             emr upload <FILE> <BUCKET> <BUCKETNAME>
+            emr copy <CLUSTERID> <BUCKET> <BUCKETNAME>
 
 
         This command is used to interface with Amazon Web Services
@@ -69,10 +67,13 @@ class EmrCommand(PluginCommand):
             emr start <NAME> [--master=MASTER] [--node=NODE] [--count=COUNT]
                 Starts a cluster with a given name, number of servers, and server type. Bootstraps with Hadoop and
                 Spark.
+            emr copy <BUCKET> <BUCKETNAME>
+                Copy a file from S3 to the cluster's master node. Typically, this is the Python program that runs
+                the analysis via Spark.
         """
 
         map_parameters(arguments, 'status', 'format', 'type', 'master', 'node', 'count', 'state')
-        print(arguments)
+        #print(arguments)
 
         emr = Manager()
 
@@ -103,14 +104,13 @@ class EmrCommand(PluginCommand):
         elif arguments['list'] and arguments['steps']:
             steps = emr.list_steps(arguments)
 
-            print(steps)
             if len(steps) == 0:
                 print("No steps were found.")
             else:
                 print(Printer.flatwrite(steps,
                                         sort_keys=["Id"],
-                                        order=["Id", "Name", "Status"],
-                                        header=["ID", "Name", "Status.State"],
+                                        order=["Id", "Name", "Status.State", "Status.StateChangeReason"],
+                                        header=["ID", "Name", "Status", "Status Reason"],
                                         output=arguments['format']))
         elif arguments['describe']:
             cluster = emr.describe_cluster(arguments)
@@ -142,7 +142,8 @@ class EmrCommand(PluginCommand):
             upload = emr.upload_file(arguments)
             print("File uploaded to: " + upload['bucket'] + " - " + upload['file'])
         elif arguments['copy']:
-            return ""
+            results = emr.copy_file(arguments)
+            print("Copy step is running. Step ID: " + results['StepIds'][0])
 
         return ""
 
