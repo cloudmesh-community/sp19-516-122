@@ -94,13 +94,12 @@ class Manager(object):
                  'InstanceCount': int(args['count']), 'KeepJobFlowAliveWhenNoSteps': True,
                  'TerminationProtected': False}
 
-        bootstrap = [{'Name': 'Maximize Spark Default Config', 'ScriptBootstrapAction':
-                     {'Path': 's3://support.elasticmapreduce/spark/maximize-spark-default-config'}}]
+        steps = [{'Name': 'Debugging', 'ActionOnFailure': 'TERMINATE_CLUSTER',
+                 'HadoopJarStep': { 'Jar': 'command-runner.jar', 'Args': ['state-pusher-script']}}]
 
-        results = client.run_job_flow(Name=args['<NAME>'], ReleaseLabel="emr-5.21.0", Instances=setup,
+        results = client.run_job_flow(Name=args['<NAME>'], ReleaseLabel="emr-5.22.0", Instances=setup,
                                       Applications=[{'Name': 'Spark'}, {'Name': 'Hadoop'}], VisibleToAllUsers=True,
-                                      JobFlowRole='EMR_EC2_DefaultRole', ServiceRole='EMR_DefaultRole',
-                                      BootstrapActions=bootstrap)
+                                      Steps=steps, JobFlowRole='EMR_EC2_DefaultRole', ServiceRole='EMR_DefaultRole')
 
         return {"cloud": "aws", "kind": "emr", "cluster": results['JobFlowId'], "name": args['<NAME>'],
                 "status": "Starting"}
@@ -118,6 +117,17 @@ class Manager(object):
 
         step = {'Name': 'Copy ' + args['<BUCKETNAME>'], 'ActionOnFailure': 'CANCEL_AND_WAIT',
                 'HadoopJarStep': {'Jar': 'command-runner.jar', 'Args': ['aws', 's3', 'cp', s3, '/home/hadoop/']}}
+
+        response = client.add_job_flow_steps(JobFlowId=args['<CLUSTERID>'], Steps=[step])
+        return response
+
+    def run(self, args):
+        client = self.get_client()
+
+        step = {'Name': 'Run ' + args['<BUCKETNAME>'], 'ActionOnFailure': 'CANCEL_AND_WAIT',
+                'HadoopJarStep': {'Jar': 'command-runner.jar', 'Args': ['spark-submit',
+                                                                        's3://' + args['<BUCKET>'] + '/' +
+                                                                        args['<BUCKETNAME>']]}}
 
         response = client.add_job_flow_steps(JobFlowId=args['<CLUSTERID>'], Steps=[step])
         return response

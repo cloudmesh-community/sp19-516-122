@@ -5,12 +5,6 @@ from cloudmesh.emr.api.manager import Manager
 
 from cloudmesh.common.Printer import Printer
 
-
-'''
-Todo
-	Run Steps.
-'''
-
 class EmrCommand(PluginCommand):
 
     # noinspection PyUnusedLocal
@@ -28,6 +22,7 @@ class EmrCommand(PluginCommand):
             emr start <NAME> [--master=MASTER] [--node=NODE] [--count=COUNT]
             emr upload <FILE> <BUCKET> <BUCKETNAME>
             emr copy <CLUSTERID> <BUCKET> <BUCKETNAME>
+            emr run <CLUSTERID> <BUCKET> <BUCKETNAME>
 
 
         This command is used to interface with Amazon Web Services
@@ -38,15 +33,15 @@ class EmrCommand(PluginCommand):
             CLUSTERID               The AWS Cluster ID.
             NAME                    The name of the cluster.
             FILE                    The local file to upload.
-            BUCKET                  The name of the S3 bucket to upload to.
-            BUCKETNAME              The name to save to in the Bucket.
+            BUCKET                  The name of the S3 bucket to use.
+            BUCKETNAME              The name to file in the Bucket to use.
 
         Options:
             --status=STATUS         The status to search for.  [default: all]
             --type=TYPE             The type of instance to search for.  [default: all]
             --format=FORMAT         How to format the output.  [default: table]
-            --master=MASTER         The type of server to use for the master node. [default: m1.medium]
-            --node=NODE             The type of server to use for the worker nodes. [default: m1.medium]
+            --master=MASTER         The type of server to use for the master node. [default: m3.xlarge]
+            --node=NODE             The type of server to use for the worker nodes. [default: m3.xlarge]
             --count=COUNT           The number of servers to use [default: 3]
             --state=STATE           The state of the job step to filter for.
 
@@ -68,8 +63,9 @@ class EmrCommand(PluginCommand):
                 Starts a cluster with a given name, number of servers, and server type. Bootstraps with Hadoop and
                 Spark.
             emr copy <BUCKET> <BUCKETNAME>
-                Copy a file from S3 to the cluster's master node. Typically, this is the Python program that runs
-                the analysis via Spark.
+                Copy a file from S3 to the cluster's master node.
+            emr run <CLUSTERID> <BUCKET> <BUCKETNAME>
+                Submit a spark application stored in an S3 bucket to the spark cluster.
         """
 
         map_parameters(arguments, 'status', 'format', 'type', 'master', 'node', 'count', 'state')
@@ -144,6 +140,9 @@ class EmrCommand(PluginCommand):
         elif arguments['copy']:
             results = emr.copy_file(arguments)
             print("Copy step is running. Step ID: " + results['StepIds'][0])
+        elif arguments['run']:
+            results = emr.run(arguments)
+            print("Run step is running. Step ID: " + results['StepIds'][0])
 
         return ""
 
