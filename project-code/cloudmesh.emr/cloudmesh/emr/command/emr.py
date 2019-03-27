@@ -5,6 +5,9 @@ from cloudmesh.emr.api.manager import Manager
 
 from cloudmesh.common.Printer import Printer
 
+#
+# TODO: please remove the < > from command
+#
 class EmrCommand(PluginCommand):
 
     # noinspection PyUnusedLocal
