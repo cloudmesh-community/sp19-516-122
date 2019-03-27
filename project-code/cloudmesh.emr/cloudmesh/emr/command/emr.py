@@ -7,6 +7,7 @@ from cloudmesh.common.Printer import Printer
 
 #
 # TODO: please remove the < > from command
+# TODO: please use .format instead of + in strings
 #
 class EmrCommand(PluginCommand):
 
