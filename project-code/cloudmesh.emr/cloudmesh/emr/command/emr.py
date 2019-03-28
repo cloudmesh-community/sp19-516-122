@@ -169,6 +169,7 @@ class EmrCommand(PluginCommand):
             print("Copy step is running. Step ID: {stepid}".format(stepid=id))
         elif arguments['run']:
             results = emr.run(arguments)
+            id = results['StepIds'][0]
             print("Run step is running. Step ID: {stepid}".format(stepid=id))
 
         return ""
