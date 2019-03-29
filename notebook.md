@@ -1,4 +1,5 @@
 # Week 03/25/2019-03/31/2019
+* Read: chapter 12 (Hadoop) in Cloud Computing Book.
 * Project: Finished major development on cloudmesh CMD. Project has been rolled
 into cloudmesh.
 
