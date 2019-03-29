@@ -1,3 +1,7 @@
+# Week 03/25/2019-03/31/2019
+* Project: Finished major development on cloudmesh CMD. Project has been rolled
+into cloudmesh.
+
 # Week 03/18/2019-03/24/2019
 * Project: Rewrote project to split into EMR.py and manager.py with one handling
 interface and the other handling actual program logic. Finished work on spinning
