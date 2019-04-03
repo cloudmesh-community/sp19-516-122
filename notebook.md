@@ -1,6 +1,11 @@
+# Week 04/01/2019-04/07/2019
+* Project: Continued work on OpenAPI spec for cloudmesh.emr. Finished list_instances
+list_steps, describe, stop. ToDo: start, run, copy, and upload.
+
 # Week 03/25/2019-03/31/2019
 * Project: Began implementing OpenAPI spec for cloudmesh.emr. Finished implementing
-list_clusters. ToDo: list_instances, list_steps, describe, stop, start, run.
+list_clusters. ToDo: list_instances, list_steps, describe, stop, start, run, copy,
+and upload.
 
 # Week 03/25/2019-03/31/2019
 * Read: chapter 12 (Hadoop) in Cloud Computing Book.
