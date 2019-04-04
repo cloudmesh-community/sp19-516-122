@@ -1,6 +1,7 @@
 # Week 04/01/2019-04/07/2019
-* Project: Continued work on OpenAPI spec for cloudmesh.emr. Finished list_instances
-list_steps, describe, stop. ToDo: start, run, copy, and upload.
+* Project: Finished implementing OpenAPI spec. Updated string concatenation to use
+format() instead of +. Improve the DocOpts.\
+* Todo: Benchmark, manual, chapter, sections.
 
 # Week 03/25/2019-03/31/2019
 * Project: Began implementing OpenAPI spec for cloudmesh.emr. Finished implementing
