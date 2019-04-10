@@ -1,3 +1,6 @@
+# Week 04/08/2019-04/14/2019
+* Project: Working on @DatabaseUpdate and Nose Tests. Manual partially written.
+
 # Week 04/01/2019-04/07/2019
 * Project: Finished implementing OpenAPI spec. Updated string concatenation to use
 format() instead of +. Improved the DocOpts.
