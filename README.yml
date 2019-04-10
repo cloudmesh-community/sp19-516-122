@@ -6,8 +6,8 @@ owner:
   community: e516
   semester: sp19
 project:
-  code: https://github.com/cloudmesh-community/cloudmesh.emr
-  report: https://github.com/cloudmesh-community/cloudmesh.emr/README.md
+  code: https://github.com/cloudmesh/cloudmesh-emr
+  report: https://github.com/cloudmesh/cloudmesh-emr/blob/master/README.md
 section:
   - title: NumPy
     keyword: numpy
