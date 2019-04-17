@@ -9,6 +9,8 @@ project:
   - title: Cloudmesh Emr
     code: https://github.com/cloudmesh/cloudmesh-emr
     url: https://github.com/cloudmesh/cloudmesh-emr/blob/master/README.md
+    pytest:
+      - TBD
 section:
   - title: NumPy
     keyword: numpy
