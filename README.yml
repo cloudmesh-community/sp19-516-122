@@ -8,7 +8,7 @@ owner:
 project:
   - title: Cloudmesh Emr
     code: https://github.com/cloudmesh/cloudmesh-emr
-    report: https://github.com/cloudmesh/cloudmesh-emr/blob/master/README.md
+    url: https://github.com/cloudmesh/cloudmesh-emr/blob/master/README.md
 section:
   - title: NumPy
     keyword: numpy
