@@ -11,6 +11,11 @@ project:
     url: https://github.com/cloudmesh/cloudmesh-emr/blob/master/README.md
     pytest:
       - TBD
+chapter:
+  - title: Spark
+    url: https://github.com/cloudmesh-community/book/blob/master/chapters/mapreduce/spark.md
+    bib: https://github.com/cloudmesh-community/book/blob/master/bib/spark.bib
+    github: https://github.com/cloudmesh-community/book/pull/445
 section:
   - title: NumPy
     keyword: numpy
