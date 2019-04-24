@@ -11,6 +11,7 @@ project:
     url: https://github.com/cloudmesh/cloudmesh-emr/blob/master/README.md
     pytest:
       - https://github.com/cloudmesh/cloudmesh-emr/blob/master/tests/test_emr_manager.py
+      - https://github.com/cloudmesh/cloudmesh-emr/blob/master/tests/test_emr_command.py
 chapter:
   - title: Spark
     url: https://github.com/cloudmesh-community/book/blob/master/chapters/mapreduce/spark.md
