@@ -1,9 +1,18 @@
+# Week 04/22/2019-04/28/2019
+* Finished manager and command PyTests.
+
+# Week 04/15/2019-04/21/2019
+* Chapter: Wrote chapter on Spark. Submitted and accepted into cloudmesh book.
+* Project: Finished writing manual. Began work on pytest.
+* Section: Wrote section on datacenter energy costs.
+
 # Week 04/08/2019-04/14/2019
 * Project: Working on @DatabaseUpdate and Nose Tests. Manual partially written.
 
 # Week 04/01/2019-04/07/2019
 * Project: Finished implementing OpenAPI spec. Updated string concatenation to use
 format() instead of +. Improved the DocOpts.
+* Cloudmesh: Fixed a clean install issue missing the Docker package.
 * Todo: Benchmark, manual, chapter, sections.
 
 # Week 03/25/2019-03/31/2019
@@ -42,6 +51,7 @@ PrettyTable to nicely print results of requests.
 * Read: chapter 13 (Containers) in Cloud Computing Book
 * Videos: Containers A and Containers B.
 * Chapters: Working on spark.md. Wrote introduction section.
+* Cloudmesh: Fixed WGET and SystemPath for Mongo installs.
 * Office Hours: attended Wednesday Office Hours discussing projects and Thursday
 office hours discussing problems people were having.
 * Activity: Learned how to spin up/spin down Google VM instances. Worked with
