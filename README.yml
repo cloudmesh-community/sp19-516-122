@@ -10,7 +10,7 @@ project:
     code: https://github.com/cloudmesh/cloudmesh-emr
     url: https://github.com/cloudmesh/cloudmesh-emr/blob/master/README.md
     pytest:
-      - TBD
+      - https://github.com/cloudmesh/cloudmesh-emr/blob/master/tests/test_emr_manager.py
 chapter:
   - title: Spark
     url: https://github.com/cloudmesh-community/book/blob/master/chapters/mapreduce/spark.md
