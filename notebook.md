@@ -1,5 +1,5 @@
 # Week 04/22/2019-04/28/2019
-* Finished manager and command PyTests.
+* Finished manager, command, and OpenAPI PyTests.
 
 # Week 04/15/2019-04/21/2019
 * Chapter: Wrote chapter on Spark. Submitted and accepted into cloudmesh book.
