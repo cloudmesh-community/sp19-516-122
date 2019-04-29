@@ -13,7 +13,9 @@ project:
       - https://github.com/cloudmesh/cloudmesh-emr/blob/master/tests/test_emr_manager.py
       - https://github.com/cloudmesh/cloudmesh-emr/blob/master/tests/test_emr_command.py
       - https://github.com/cloudmesh/cloudmesh-emr/blob/master/tests/test_emr_openapi.py
-  - status: 90%
+    benchmarks:
+      - https://github.com/cloudmesh/cloudmesh-manual/pull/17
+  - status: 100%
 chapter:
   - title: Spark
     url: https://github.com/cloudmesh-community/book/blob/master/chapters/mapreduce/spark.md
