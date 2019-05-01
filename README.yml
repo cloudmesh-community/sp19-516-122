@@ -7,15 +7,15 @@ owner:
   semester: sp19
 project:
   - title: Cloudmesh Emr
+    status: 100%
     code: https://github.com/cloudmesh/cloudmesh-emr
     url: https://github.com/cloudmesh/cloudmesh-emr/blob/master/README.md
+    documentation: https://github.com/cloudmesh/cloudmesh-emr/blob/master/README.md
     pytest:
       - https://github.com/cloudmesh/cloudmesh-emr/blob/master/tests/test_emr_manager.py
       - https://github.com/cloudmesh/cloudmesh-emr/blob/master/tests/test_emr_command.py
       - https://github.com/cloudmesh/cloudmesh-emr/blob/master/tests/test_emr_openapi.py
-    benchmarks:
-      - https://github.com/cloudmesh/cloudmesh-manual/pull/17
-  - status: 100%
+    benchmark: https://github.com/cloudmesh/cloudmesh-manual/blob/master/docs-source/source/benchmarks/emr.md
 chapter:
   - title: Spark
     url: https://github.com/cloudmesh-community/book/blob/master/chapters/mapreduce/spark.md
