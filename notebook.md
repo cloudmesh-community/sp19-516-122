@@ -1,3 +1,7 @@
+# Week 04/29/2019-05/03/2019
+* Finished benchmark and added to cloudmesh-manual.
+* Cleaned up YAML file and checked it against a validator.
+
 # Week 04/22/2019-04/28/2019
 * Finished manager, command, and OpenAPI PyTests.
 
