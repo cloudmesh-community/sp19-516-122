@@ -5,7 +5,10 @@ from cloudmesh.management.configuration.config import Config
 from libcloud.compute.types import Provider
 from libcloud.compute.providers import get_driver
 
-config = Config("C:\\Users\\aduer\\Desktop\\untitled\\cloudmesh4.yaml")
+#
+# note this is not how we would initialize from config
+#
+config = Config("C:\\Users\\aduer\\Desktop\\untitled\\cloudmesh.yaml")
 
 google = get_driver(Provider.GCE)
 driver = google(config['cloudmesh.cloud.gce.credentials.clientid'],
